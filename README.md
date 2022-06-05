@@ -11,3 +11,7 @@ If you want to see the example, just run [`Example.cs`](https://github.com/Retr0
 - Draggable Panels/Windows
 
 ![moving](.github/img/moving.gif)
+
+- Docking to the Window
+
+![docking](.github/img/docking.gif)
