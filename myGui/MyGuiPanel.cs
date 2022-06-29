@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace MyGui
 {
-    class MyGuiPanel
+    public class MyGuiPanel
     {
         private Panel panel;
         private Label label;
