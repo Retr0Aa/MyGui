@@ -92,26 +92,30 @@ namespace MyGui
 
         public void Init()
         {
-            panel = new Panel() {
+            panel = new Panel()
+            {
                 Size = m_Size,
                 Location = m_Position,
                 Dock = currentDock,
 
                 BackColor = Color.LightGray
             };
-            label = new Label() {
+            label = new Label()
+            {
                 Dock = DockStyle.Fill,
                 Font = new Font("Verdana", 13),
                 ForeColor = Color.White,
                 Text = m_Title
             };
-            topPanel = new Panel() {
+            topPanel = new Panel()
+            {
                 Dock = DockStyle.Top,
                 Size = new Size(10, 20),
                 BackColor = Color.Gray
             };
 
-            stripMenu = new ToolStrip() {
+            stripMenu = new ToolStrip()
+            {
                 Dock = DockStyle.Right,
                 Text = "Dock",
                 Size = new Size(20, 20),
@@ -120,7 +124,8 @@ namespace MyGui
                 BackColor = Color.Gray
             };
 
-            dockDropdown = new ToolStripDropDownButton() {
+            dockDropdown = new ToolStripDropDownButton()
+            {
                 Dock = DockStyle.Right,
                 Text = "Dock",
                 Size = new Size(20, 20),
@@ -128,7 +133,8 @@ namespace MyGui
                 ShowDropDownArrow = false
             };
 
-            contentPanel = new Panel() {
+            contentPanel = new Panel()
+            {
                 Dock = DockStyle.Fill
             };
 
@@ -172,9 +178,7 @@ namespace MyGui
             {
                 m_Form.Controls.Add(item);
                 item.Visible = false;
-
                 //item.MouseUp += OnDockMouseUp;
-
                 Console.WriteLine("Workmi!");
             }
             dockPlaces[0].MouseUp += OnDockMouseUp;
@@ -190,23 +194,28 @@ namespace MyGui
             {
                 SetDock(DockStyle.None);
 
-            } else if (((ToolStripMenuItem)sender).Text == "Top")
+            }
+            else if (((ToolStripMenuItem)sender).Text == "Top")
             {
                 SetDock(DockStyle.Top);
 
-            } else if (((ToolStripMenuItem)sender).Text == "Bottom")
+            }
+            else if (((ToolStripMenuItem)sender).Text == "Bottom")
             {
                 SetDock(DockStyle.Bottom);
 
-            } else if (((ToolStripMenuItem)sender).Text == "Left")
+            }
+            else if (((ToolStripMenuItem)sender).Text == "Left")
             {
                 SetDock(DockStyle.Left);
 
-            } else if (((ToolStripMenuItem)sender).Text == "Right")
+            }
+            else if (((ToolStripMenuItem)sender).Text == "Right")
             {
                 SetDock(DockStyle.Right);
 
-            } else if (((ToolStripMenuItem)sender).Text == "Fill")
+            }
+            else if (((ToolStripMenuItem)sender).Text == "Fill")
             {
                 SetDock(DockStyle.Fill);
             }
@@ -224,7 +233,6 @@ namespace MyGui
         {
             m_HoveredPanelDock = (Panel)sender;
         }
-
         private void OnDockMouseUp(object sender, MouseEventArgs e)
         {
             Console.WriteLine("Working!");
@@ -238,15 +246,12 @@ namespace MyGui
             {
                 item.Visible = false;
             }
-
             if (panel.Dock != DockStyle.None)
             {
                 panel.Draggable(false);
             }
-
             var back1 = panel.GetNextControl((Control)sender, false);
             var back2 = back1.GetNextControl(back1, false);
-
             SetDock(panel.GetNextControl((Control)sender, false).Dock);
             Console.WriteLine(back2);*/
 
@@ -281,9 +286,9 @@ namespace MyGui
 
             if (canMove)
             {
-            var location = activeControl.Location;
-            location.Offset(e.Location.X - previousLocation.X, e.Location.Y - previousLocation.Y);
-            activeControl.Location = location;
+                var location = activeControl.Location;
+                location.Offset(e.Location.X - previousLocation.X, e.Location.Y - previousLocation.Y);
+                activeControl.Location = location;
             }
 
             //dockPlaces[0].Visible = true;

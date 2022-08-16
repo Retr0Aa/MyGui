@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CADA5C7-4F7E-406F-AD27-93638F0A4B98}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>myGui</RootNamespace>
-    <AssemblyName>myGui</AssemblyName>
+    <ProjectGuid>{EE4C6506-5A0B-4807-8744-EB906F3A1CD0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Example</RootNamespace>
+    <AssemblyName>Example</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,12 +32,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Example.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,7 +44,10 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\MyGuiPanel.cs" />
+    <ProjectReference Include="..\myGui\myGui.csproj">
+      <Project>{0cada5c7-4f7e-406f-ad27-93638f0a4b98}</Project>
+      <Name>myGui</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

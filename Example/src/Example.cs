@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MyGui;
 
 namespace Example
@@ -14,7 +15,8 @@ namespace Example
         // Just start the program and you will see window with MyGui example
         public static void Main(String[] args)
         {
-            Form form = new Form() {
+            Form form = new Form()
+            {
                 Size = new Size(1080, 800),
                 Text = "MyGui Example"
             };
