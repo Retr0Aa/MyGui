@@ -1,8 +1,4 @@
-workspace "MyGui"
-   configurations { "Debug", "Release" }
-   startproject "Example"
-
-  project "MyGui"
+project "MyGui"
     kind "SharedLib"
     language "C#"
     location "MyGui"
@@ -14,7 +10,7 @@ workspace "MyGui"
     
     links { "System", "System.Drawing", "System.Windows.Forms" }
 
-  project "Example"
+project "Example"
     kind "ConsoleApp"
     language "C#"
     location "Example"
