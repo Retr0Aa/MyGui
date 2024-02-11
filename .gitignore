@@ -2,6 +2,7 @@
 /.vs
 *.sln
 /Example/Example.csproj
+/MyGui/MyGui.csproj
 
 # Build & Premake
 /bin
