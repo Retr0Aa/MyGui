@@ -9,13 +9,3 @@ project "MyGui"
     files { "MyGui/src/**.cs" }
     
     links { "System", "System.Drawing", "System.Windows.Forms" }
-
-project "Example"
-    kind "ConsoleApp"
-    language "C#"
-    location "Example"
-    targetdir "bin/Example/%{cfg.buildcfg}"
-
-    files { "Example/src/**.cs" }
-    
-    links { "myGui", "System", "System.Drawing", "System.Windows.Forms" }
